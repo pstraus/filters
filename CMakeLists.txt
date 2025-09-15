@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.28.3)
-project(filters)
+project(filters LANGUAGES CXX)
 
 find_package(Eigen3 REQUIRED)
 

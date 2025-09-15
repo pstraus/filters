@@ -2,7 +2,11 @@
 
 using namespace filters;
 
-CartesianOneDimensionalWithSpeed::CartesianOneDimensionalWithSpeed(const Eigen::Vector<double, 2> &state);
+CartesianOneDimensionalWithSpeed::CartesianOneDimensionalWithSpeed(const Eigen::Vector<double, 2> &state)
+    : m_state{state}
+{
+    // Nothing to do
+}
 
 // Particle extrapolates itself forward in time by dt
 // dt in seconds
@@ -12,7 +16,7 @@ void CartesianOneDimensionalWithSpeed::extrapolate(double dt)
     m_state[0] = m_state[0] + m_state[1] * dt;
 }
 
-const Eigen::Vector<double, 2> &CartesianOneDimensionalWithSpeed::getState() const;
+const Eigen::Vector<double, 2> &CartesianOneDimensionalWithSpeed::getState() const
 {
     return m_state;
 }

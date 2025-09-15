@@ -1,4 +1,4 @@
-#pragma once;
+#pragma once
 
 #include <Eigen/Core>
 
@@ -12,10 +12,10 @@ namespace filters
 
         // Particle extrapolates itself forward in time by dt
         // dt in seconds
-        void extrapolate(double dt);
+        virtual void extrapolate(double dt) = 0;
 
-        const Eigen::Vector<double, N> &getState() const = 0;
+        virtual const Eigen::Vector<double, N> &getState() const = 0;
 
-        void setState(const Eigen::Vector<double, N> &newState) = 0;
+        virtual void setState(const Eigen::Vector<double, N> &newState) = 0;
     };
 }

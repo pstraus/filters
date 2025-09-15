@@ -15,11 +15,11 @@ namespace filters
 
         // Particle extrapolates itself forward in time by dt
         // dt in seconds
-        void extrapolate(double dt);
+        void extrapolate(double dt) override;
 
-        const Eigen::Vector<double, 2> &getState() const;
+        const Eigen::Vector<double, 2> &getState() const override;
 
-        void setState(const Eigen::Vector<double, 2> &new_state);
+        void setState(const Eigen::Vector<double, 2> &new_state) override;
 
     private:
         Eigen::Vector<double, 2> m_state;
